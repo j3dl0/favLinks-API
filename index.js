@@ -10,6 +10,12 @@ let favLinks = [
     {name: "test"}
 ]
 
+app.get("/", (_req, res)=>{
+
+    res.send("Node / Express server is operational!")
+})
+
+
 // CRUD API
 // API function 1 - create something
 app.post("/favlink", (req, res)=>{
@@ -30,7 +36,7 @@ app.post("/favlink", (req, res)=>{
 })
 
 // API function 2 - read something 
-app.get("/favlinks", (req, res)=>{
+app.get("/favlink", (_req, res)=>{
     // send the current list of favlinks from the array or maybe from a DB!
 
     res.send(favLinks)
@@ -38,7 +44,10 @@ app.get("/favlinks", (req, res)=>{
 
 
 // API function 3 - update something
+app.put("/favlink",  (_req, res)=>{
 
+    res.send("Updating something")
+})
 
 // API function 4 - delete something
 app.delete("/favlink", (req, res)=>{
